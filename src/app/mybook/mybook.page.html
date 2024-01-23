@@ -10,4 +10,10 @@
       <ion-title size="large">mybook</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let klic of storedData">
+      {{ klic }}
+    </ion-item>
+  </ion-list>
+

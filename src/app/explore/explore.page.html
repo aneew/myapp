@@ -1,11 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" style="background-color: #aedcf4">
   <ion-toolbar>
     <ion-title>Explore new words!</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-list>
+<ion-content [fullscreen]="true" class="center-container">
+  <ion-card>
     <ion-input
       type="text"
       fill="solid"
@@ -14,14 +14,15 @@
       helperText="Enter word"
       [(ngModel)]="word"
     ></ion-input>
-  </ion-list>
+  </ion-card>
 
   <ion-item>
     <ion-button expand="block" (click)="searchWord()">Search</ion-button>
   </ion-item>
 
-  <!-- Display the list of similar words -->
+  <!-- This is the list of similar words, somehow I cant change the background color -->
   <ion-list *ngIf="similarWords.length > 0">
+    <h1>List of similar words:</h1>
     <ion-item *ngFor="let similarWord of similarWords">
       {{ similarWord }}
     </ion-item>
