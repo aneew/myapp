@@ -20,4 +20,13 @@ export class MybookPage implements OnInit {
     console.log('stored data are:' + storedData);
     console.log('this stored data are:' + this.storedData);
   }
+
+  async refresh() {
+    const storedData = await this.storage.getKeys();
+    if (storedData) {
+      this.storedData = storedData;//Object.keys(storedData);
+    }
+    console.log('stored data are:' + storedData);
+    console.log('this stored data are:' + this.storedData);
+  }
 }
