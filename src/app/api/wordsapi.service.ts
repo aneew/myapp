@@ -1,14 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class WordsapiService {
-  private apiUrl = 'https://wordsapiv1.p.rapidapi.com/words/young/similarTo';
+  private apiUrl = 'https://wordsapiv1.p.rapidapi.com/words/{word}/similarTo'; 
   private rapidApiKey = 'e88c1fdaf4msh700984fb3ed153dp15570ajsn4abb57d26447';
 
   constructor(public http: HttpClient) { }
@@ -19,7 +17,8 @@ export class WordsapiService {
       'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
     });
 
-    const url = `${this.apiUrl}?input=${word}`;
+    // Replace '{word}' in the URL with the input word
+    const url = this.apiUrl.replace('{word}', word);
     return this.http.get(url, { headers });
   }
 }

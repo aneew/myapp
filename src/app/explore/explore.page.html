@@ -4,18 +4,26 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-input
-    type="text"
-    fill="solid"
-    label="Word:"
-    labelPlacement="floating"
-    helperText="Enter word"
-    [(ngModel)]="word"
-  ></ion-input>  </ion-list>  
+      type="text"
+      fill="solid"
+      label="Word:"
+      labelPlacement="floating"
+      helperText="Enter word"
+      [(ngModel)]="word"
+    ></ion-input>
+  </ion-list>
+
   <ion-item>
-    <ion-button expand="block"  (click)="searchWord()">Search</ion-button>
+    <ion-button expand="block" (click)="searchWord()">Search</ion-button>
   </ion-item>
+
+  <!-- Display the list of similar words -->
+  <ion-list *ngIf="similarWords.length > 0">
+    <ion-item *ngFor="let similarWord of similarWords">
+      {{ similarWord }}
+    </ion-item>
+  </ion-list>
 </ion-content>
