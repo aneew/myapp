@@ -1,36 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Main Page
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <p>Where do you want to go to?</p>
-  <ion-fab slot="fixed" horizontal="center" vertical="center">
-    <ion-fab-button color="secondary">
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center no-scroll-content">
+  <div class="center-container" vertical="center">
+  <div vertical="top">
+    <h1>Where do you want to go to?</h1>
+  </div>
+  <div>
+  <ion-fab horizontal="center">
+    <ion-fab-button color="success">
       <ion-icon name="reorder-four-outline"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="bottom">
-      <ion-fab-button color="blue">
+      <ion-fab-button color="success">
         <ion-icon name="rocket-outline"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button color="blue">
+      <ion-fab-button color="success">
         <ion-icon name="book-outline"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button color="blue">
+      <ion-fab-button color="success">
         <ion-icon name="help-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
   </ion-fab>
+  </div>
   
-  
-    
+  </div>
 </ion-content>
